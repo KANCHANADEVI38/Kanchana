@@ -2,14 +2,23 @@ package sample;
 import java.util.Scanner;
 public class star {
 	public static void main(String[] args){
-	String str = "abcdef";
-	char[] ch  = str.toCharArray();
-	for(char c : ch)
-	{
-	int temp = (int)c;
-	int temp_integer = 96; //for lower case
-	if(temp<=122 & temp>=97)
-	System.out.print(temp-temp_integer);
-	}
+		int mainArray[] = { 1, 2, 3, 2, 5, 6, 2 }, subArray[] = { 2, 2, 2 };
 
-}}	
+	
+	}
+	    void findIfArrayIsASubset(int[] main, int[] sub) {
+	    int count = 0;
+	    for (int i = 0; i < main.length; i++) {
+	        for (int j = 0; j < sub.length; j++) {
+	            if (main[i] == sub[j]) {
+	                main[i] = -1;
+	                count++;
+	                break;
+	            }
+	        }
+	    }
+	    if (count == sub.length)
+	        System.out.println("is a subset");
+	    else
+	        System.out.println("is not a subset");
+	    }}
