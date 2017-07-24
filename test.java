@@ -1,86 +1,26 @@
 package sample;    
 import java.util.Scanner;
-
+import java.util.HashSet;
 public class test
 
 {
 
-    public static void main(String[] args) 
-
-    {
-
-        int n, flag = 0, count = 0;
-
-        Scanner s = new Scanner(System.in);
-
-        System.out.print("Enter no. of elements you want in array:");
-
-        n = s.nextInt();
-
-        int a[] = new int[n];
-
-        System.out.println("Enter all the elements:");
-
-        for(int i = 0; i < n; i++)
-
-        {
-
-            a[i] = s.nextInt();
-
-        }
-
-        System.out.print("Non repeated elements are:");
-
-        for(int i = 0; i < n; i++)
-
-        {
-
-            for(int j = 0; j < n; j++)
-
-            {
-
-                if(i != j)
-
-                {
-
-                    if(a[i] != a[j])
-
-                    {
-
-                        flag = 1;
-
-                    }
-
-                    else
-
-                    {
-
-                        flag = 0;
-
-                        break;
-
-                    }
-
-                }
-
-            }
-
-            if(flag == 1)
-
-            {
-
-                count++;
-
-                System.out.print(a[i]+" ");
-
-            }
-
-        }
-
-        System.out.println("");
-
-        System.out.println("Number of non repeated elements are:"+count);
-
-    }
-
+	public int find(int [] arrA){
+		int index = -1;
+		HashSet<Integer> hs = new HashSet<>();
+		for(int i = arrA.length-1;i>=0;i--){
+			if(hs.contains(arrA[i])){
+				index = i;
+			}else{
+				hs.add(arrA[i]);
+			}
+		}
+		return arrA[index];
+	}
+	public static void main(String args[]){
+		int [] a = {1,2,5,7,5,3,10,2};
+	test f = new test();
+		System.out.println("{1,2,5,7,5,3,10,2}");
+		System.out.println("first repeated element by index is : " + f.find(a));
+	}
 }
