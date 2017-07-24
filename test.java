@@ -4,23 +4,21 @@ import java.util.HashSet;
 public class test
 
 {
-
-	public int find(int [] arrA){
-		int index = -1;
-		HashSet<Integer> hs = new HashSet<>();
-		for(int i = arrA.length-1;i>=0;i--){
-			if(hs.contains(arrA[i])){
-				index = i;
-			}else{
-				hs.add(arrA[i]);
-			}
-		}
-		return arrA[index];
-	}
-	public static void main(String args[]){
-		int [] a = {1,2,5,7,5,3,10,2};
-	test f = new test();
-		System.out.println("{1,2,5,7,5,3,10,2}");
-		System.out.println("first repeated element by index is : " + f.find(a));
-	}
-}
+	 String longestPrefix = null;
+	  if(strs.length>0){
+	    	String[] strs;
+	        longestPrefix = strs[0];
+	    }
+	    for(int i=1; i<strs.length; i++){
+	    	String[] strs;
+	        String analyzing = strs[i];
+	        int j=0;
+	        for(; j<Math.min(longestPrefix.length(), strs[i].length()); j++){
+	            if(longestPrefix.charAt(j) != analyzing.charAt(j)){
+	                break;
+	            }
+	        }
+	        longestPrefix = strs[i].substring(0, j);
+	    }
+	    return longestPrefix;
+	}}
