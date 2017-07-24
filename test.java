@@ -1,46 +1,78 @@
-package sample;
+package sample;    
 import java.util.Scanner;
-public class test {
-public static void main(String[] args){
 
-	   Scanner s = new Scanner(System.in);
- int n, max;
+    public class test
 
-	    System.out.print("Enter number of elements in the array:");
+    {
 
-	        n = s.nextInt();
+        public static void main(String[] args) 
 
-	        int a[] = new int[n];
+        {
 
-	        System.out.println("Enter elements of array:");
+            int n, x, flag = 0, i = 0;
 
-	        for(int i = 0; i < n; i++)
+            Scanner s = new Scanner(System.in);
 
-	        {
+            System.out.print("Enter no. of elements you want in array:");
 
-	            a[i] = s.nextInt();
+            n = s.nextInt();
 
-	        }
+            int a[] = new int[n];
 
-	        max = a[0];
+            System.out.println("Enter all the elements:");
 
-	        for(int i = 0; i < n; i++)
+            for(i = 0; i < n; i++)
 
-	        {
+            {
 
-	            if(max < a[i])
+                a[i] = s.nextInt();
 
-	            {
+            }
 
-	                max = a[i];
+            System.out.print("Enter the element you want to find:");
 
-	            }
+            x = s.nextInt();
 
-	        }
+            for(i = 0; i < n; i++)
 
-	        System.out.println("Maximum value:"+max);
+            {
 
-	    }
+                if(a[i] == x)
 
-	
-}
+                {
+
+                    flag = 1;
+
+                    break;
+
+                }
+
+                else
+
+                {
+
+                    flag = 0;
+
+                }
+
+            }
+
+            if(flag == 1)
+
+            {
+
+                System.out.println("Element found at position:"+(i + 1));
+
+            }
+
+            else
+
+            {
+
+                System.out.println("Element not found");
+
+            }
+
+        }
+
+    }
