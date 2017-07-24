@@ -1,57 +1,65 @@
 package sample;    
 import java.util.Scanner;
 
-    public class test
+public class test
+
+{
+
+    public static void main(String[] args) 
 
     {
 
-        public static void main(String[] args) 
+        int n, flag = 0, count = 0;
+
+        Scanner s = new Scanner(System.in);
+
+        System.out.print("Enter no. of elements you want in array:");
+
+        n = s.nextInt();
+
+        int a[] = new int[n];
+
+        System.out.println("Enter all the elements:");
+
+        for(int i = 0; i < n; i++)
 
         {
 
-            int n, x, flag = 0, i = 0;
+            a[i] = s.nextInt();
 
-            Scanner s = new Scanner(System.in);
+        }
 
-            System.out.print("Enter no. of elements you want in array:");
+        System.out.print("Non repeated elements are:");
 
-            n = s.nextInt();
+        for(int i = 0; i < n; i++)
 
-            int a[] = new int[n];
+        {
 
-            System.out.println("Enter all the elements:");
-
-            for(i = 0; i < n; i++)
+            for(int j = 0; j < n; j++)
 
             {
 
-                a[i] = s.nextInt();
-
-            }
-
-            System.out.print("Enter the element you want to find:");
-
-            x = s.nextInt();
-
-            for(i = 0; i < n; i++)
-
-            {
-
-                if(a[i] == x)
+                if(i != j)
 
                 {
 
-                    flag = 1;
+                    if(a[i] != a[j])
 
-                    break;
+                    {
 
-                }
+                        flag = 1;
 
-                else
+                    }
 
-                {
+                    else
 
-                    flag = 0;
+                    {
+
+                        flag = 0;
+
+                        break;
+
+                    }
 
                 }
 
@@ -61,18 +69,18 @@ import java.util.Scanner;
 
             {
 
-                System.out.println("Element found at position:"+(i + 1));
+                count++;
 
-            }
-
-            else
-
-            {
-
-                System.out.println("Element not found");
+                System.out.print(a[i]+" ");
 
             }
 
         }
 
+        System.out.println("");
+
+        System.out.println("Number of non repeated elements are:"+count);
+
     }
+
+}
